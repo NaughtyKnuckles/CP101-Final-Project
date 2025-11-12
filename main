@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-#Main Window
+#Main
 infoapp = tk.Tk()
 infoapp.title("Contact Information Form")
 infoapp.geometry('470x550')
