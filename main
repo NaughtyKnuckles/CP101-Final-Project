@@ -5,7 +5,6 @@ from tkinter import ttk
 infoapp = tk.Tk()
 infoapp.title("Contact Information Form")
 infoapp.geometry('470x550')
-contacts = []
 count = 1
 
 #Functions
