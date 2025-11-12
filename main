@@ -1,0 +1,73 @@
+import tkinter as tk
+from tkinter import ttk
+
+#Main Window
+infoapp = tk.Tk()
+infoapp.title("Contact Information Form")
+infoapp.geometry('470x550')
+count = 1
+
+#Functions
+def add_contact():
+    global count
+    name = fname.get()
+    phone = num.get()
+    email = email_address.get()
+
+    for number in range(count, count + 1):
+        contact_info = f"{number}. Name: {name} | Phone Number: {phone} | Email Address: {email}\n"
+        count += 1
+
+    log.config(state = "normal")
+    log.insert(tk.END, contact_info)
+    log.config(state = "disabled")
+
+    clear()
+
+def clear():
+    fname.delete(0, 'end')
+    num.delete(0, 'end')
+    email_address.delete(0, 'end')
+    log.delete(0, 'end')
+
+def clear_logs():
+    global count
+    log.config(state = "normal")
+    log.delete(1.0, "end")
+    log.config(state = "disabled")
+    count = 1
+
+#Labels
+tk.Label(text='Full Name:').pack()
+fname = ttk.Entry(infoapp, width="30")
+fname.pack()
+
+tk.Label(text='Phone Number:').pack()
+num = ttk.Entry(infoapp, width="30")
+num.pack()
+
+tk.Label(text='Email Address:').pack()
+email_address = ttk.Entry(infoapp, width="30")
+email_address.pack()
+
+
+#Buttons
+addcon = tk.Button(infoapp, text = 'Add Contact', command = add_contact)
+addcon.pack(padx=5, pady=5)
+
+clearfd = tk.Button(infoapp, text = 'Clear Fields', command = clear)
+clearfd.pack(pady=5)
+
+clear_log = tk.Button(infoapp, text="Clear Logs", command = clear_logs)
+clear_log.pack(pady=5)
+
+exit = tk.Button(infoapp, text = 'Exit', command = infoapp.destroy)
+exit.pack(pady=5)
+
+
+#Log
+log = tk.Text(infoapp, height=15, bg="white", state = "disabled")
+log.pack(padx=30, pady=10, fill="both")
+
+
+infoapp.mainloop()
