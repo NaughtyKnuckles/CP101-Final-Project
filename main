@@ -5,14 +5,15 @@ from tkinter import ttk
 infoapp = tk.Tk()
 infoapp.title("Contact Information Form")
 infoapp.geometry('470x550')
+contacts = []
 count = 1
 
 #Functions
 def add_contact():
     global count
-    name = fname.get()
-    phone = num.get()
-    email = email_address.get()
+    name = fname.get().strip()
+    phone = num.get().strip()
+    email = email_address.get().strip()
 
     for number in range(count, count + 1):
         contact_info = f"{number}. Name: {name} | Phone Number: {phone} | Email Address: {email}\n"
