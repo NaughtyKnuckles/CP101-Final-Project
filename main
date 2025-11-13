@@ -53,13 +53,13 @@ email_address.pack()
 
 #Buttons
 addcon = tk.Button(infoapp, text = 'Add Contact', command = add_contact)
-addcon.pack(padx=5, pady=5)
+addcon.pack(padx=100, pady=5, anchor='center')
 
 clearfd = tk.Button(infoapp, text = 'Clear Fields', command = clear)
-clearfd.pack(padx=5, pady=5)
+clearfd.pack(padx=100, pady=5, anchor='center')
 
 clear_log = tk.Button(infoapp, text="Clear Logs", command = clear_logs)
-clear_log.pack(pady=5)
+clear_log.pack(padx=150, pady=5, anchor='center')
 
 exit = tk.Button(infoapp, text = 'Exit', command = infoapp.destroy)
 exit.pack(pady=5)
