@@ -56,7 +56,7 @@ addcon = tk.Button(infoapp, text = 'Add Contact', command = add_contact)
 addcon.pack(padx=5, pady=5)
 
 clearfd = tk.Button(infoapp, text = 'Clear Fields', command = clear)
-clearfd.pack(pady=5)
+clearfd.pack(padx=5, pady=5)
 
 clear_log = tk.Button(infoapp, text="Clear Logs", command = clear_logs)
 clear_log.pack(pady=5)
